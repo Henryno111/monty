@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-* run - runs the opcode
+* execute - runs the opcode
 * @line: head linked list - stack
 * @index: line_counter
 * @file: poiner to monty file
@@ -43,7 +43,7 @@ int run(char *text, stack_t **line, unsigned int index, FILE *file)
 		i++;
 	}
 	if (cmd && opst[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", index, cmd);
 		fclose(file);
 		free(text);
 		free_stack(*line);
